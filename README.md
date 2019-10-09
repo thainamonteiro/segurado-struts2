@@ -1,0 +1,1 @@
+# segurado-struts2

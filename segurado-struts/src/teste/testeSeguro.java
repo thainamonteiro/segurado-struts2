@@ -1,17 +1,25 @@
 package teste;
 
+import org.junit.Test;
+
 import model.Seguro;
 import persistence.DaoSeguro;
 
 public class testeSeguro {
-	public static void main(String[] args) {
+
+	@Test
+	public void update() {
 		DaoSeguro s = new DaoSeguro();
-		Seguro seguro = new Seguro("Teste", 1500.00);
-		
+		Seguro seguro1 = new Seguro();
+
+		seguro1.setId(1);
+		seguro1.setIdentificacao("Nomenovo");
+		seguro1.setValor(325.0);
 		try {
-			s.create(seguro);
+			s.update(seguro1);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
+
 }

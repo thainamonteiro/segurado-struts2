@@ -1,17 +1,30 @@
 package teste;
 
+import org.junit.Test;
+
 import model.Segurado;
 import persistence.DaoSegurado;
 
 public class testeSegurado {
-	public static void main(String[] args) {
+
+	
+	@Test
+	public void update() throws Exception {
+
 		DaoSegurado s = new DaoSegurado();
-	Segurado segurado = new Segurado("teste1", "teste2", "teste3", "teste4", "teste5", "teste6", "teste7", "teste8", "teste9");
-		
-		try {
-			s.create(segurado);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		Segurado segurado = new Segurado();
+
+		segurado.setIdSegurado(1);
+		segurado.setCorrentista("teste");
+		segurado.setCpf("teste");
+		segurado.setData_alt("teste");
+		segurado.setData_cad("teste");
+		segurado.setData_nas("teste");
+		segurado.setDiasVisita("teste");
+		segurado.setNome("teste");
+		segurado.setRg("teste");
+		segurado.setSexo("teste");
+		s.update(segurado);
 	}
+	
 }

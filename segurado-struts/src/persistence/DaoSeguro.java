@@ -3,6 +3,8 @@ package persistence;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.tomcat.dbcp.dbcp2.ConnectionFactory;
+
 import model.Seguro;
 
 public class DaoSeguro extends Dao {
@@ -35,7 +37,7 @@ public class DaoSeguro extends Dao {
 		}
 	}
 
-	public void update(Seguro s) throws Exception {
+	public void update(Seguro s) throws Exception {				
 		try {
 			open();
 			stmt = con.prepareStatement("update seguro set identificacao=?, valor=?" + "where idseguro = ?");
@@ -64,12 +66,8 @@ public class DaoSeguro extends Dao {
 			}
 			return seguros;
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 		return null;
 	}
 }
-
-
-
-

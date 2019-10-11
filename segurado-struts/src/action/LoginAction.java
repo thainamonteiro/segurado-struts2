@@ -2,14 +2,18 @@ package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import persistence.DaoLogin;
+
 public class LoginAction extends ActionSupport { 
-    private String username; 
-    private String password; 
+	
+    private String usuario; 
+    private String senha; 
   
     public String execute() { 
-  
-        if (this.username.equals("admin")  
-                && this.password.equals("admin123")) {
+    	
+    	DaoLogin dao_login = new DaoLogin();
+    	
+        if ( ) {
             return "success"; 
         } else { 
             addActionError(getText("error.login")); 
@@ -17,19 +21,19 @@ public class LoginAction extends ActionSupport {
         } 
     } 
   
-    public String getUsername() { 
-        return username; 
+    public String getUsuario() { 
+        return usuario; 
     } 
   
-    public void setUsername(String username) { 
-        this.username = username; 
+    public void setUsuario(String usuario) { 
+        this.usuario = usuario; 
     } 
   
-    public String getPassword() { 
-        return password; 
+    public String getSenha() { 
+        return senha; 
     } 
   
-    public void setPassword(String password) { 
-        this.password = password; 
+    public void setSenha(String senha) { 
+        this.senha = senha; 
     } 
 } 

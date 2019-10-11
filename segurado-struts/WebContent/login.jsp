@@ -16,7 +16,7 @@
 						${mensagem}
 						
 						<h5 class="card-title text-center">Login</h5>
-						<form action="${pageContext.request.contextPath}/loginControllerServlet" method="post">
+						<form action="login" method="post">
 							<div class="form-group">
 								<label>Usuario:</label> <input id="usuario" name="usuario"
 									type="text" class="form-control"

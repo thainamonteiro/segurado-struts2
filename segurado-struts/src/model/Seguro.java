@@ -6,6 +6,7 @@ public class Seguro implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private int idseguro;
 	private String identificacao;
 	private Double valor;
 
@@ -39,6 +40,16 @@ public class Seguro implements Serializable {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+
+
+	public int getId() {
+		return idseguro;
+	}
+
+
+	public void setId(int id) {
+		this.idseguro = id;
 	}
 
 }

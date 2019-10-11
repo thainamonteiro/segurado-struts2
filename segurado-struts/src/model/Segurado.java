@@ -6,6 +6,7 @@ public class Segurado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private int idsegurado;
 	private String nome;
 	private String cpf;
 	private String rg;
@@ -108,8 +109,16 @@ public class Segurado implements Serializable {
 	public String getData_alt() {
 		return data_alt;
 	}
-
+ 
 	public void setData_alt(String data_alt) {
 		this.data_alt = data_alt;
+	}
+
+	public int getIdSegurado() {
+		return idsegurado;
+	}
+
+	public void setIdSegurado(int idsegurado) {
+		this.idsegurado = idsegurado;
 	}
 }

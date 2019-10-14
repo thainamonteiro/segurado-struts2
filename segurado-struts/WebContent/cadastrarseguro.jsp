@@ -18,11 +18,9 @@
 				<div class="card card-signin my-5">
 					<div class="card-body">
 
-						<span><a
-							href="${pageContext.request.contextPath}/cadastra.action">Voltar</a></span>
 						<h5 class="card-title text-center">Cadastrar Seguro</h5>
 						<form
-							action="${pageContext.request.contextPath}/seguro/login.action"
+							action="cadastrar_seguro.action"
 							method="post">
 
 							<div class="form-group">

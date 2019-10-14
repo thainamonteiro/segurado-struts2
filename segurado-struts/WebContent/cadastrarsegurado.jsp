@@ -23,7 +23,7 @@
 						${mensagem}
 						<h5 class="card-title text-center">Cadastrar Segurado</h5>
 						<form
-							action="${pageContext.request.contextPath}/seguro/seguradoControllerServlet?acao=listarsegurado"
+							action="cadastrar_segurado.action"
 							method="post">
 							<div class="form-group">
 								<label>Nome:</label> <input type="text" id="nome" name="nome"

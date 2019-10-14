@@ -13,7 +13,7 @@ public class LoginAction extends ActionSupport {
     public String execute() { 
     	
     	DaoLogin dao = new DaoLogin();
-    	Login login = new Login();
+    	Login login = new Login(this.usuario, this.senha);
     	
         if (dao.checkLogin(login)) {
             return "success"; 

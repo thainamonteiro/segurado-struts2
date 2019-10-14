@@ -10,7 +10,7 @@ public class DaoSegurado extends Dao {
 		try {
 			open();
 			
-			stmt = con.prepareStatement("insert into segurado values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			stmt = con.prepareStatement("insert into segurado (nome, rg, cpf, sexo, correntista, dias_visita, data_nasc, data_cad, data_alt)  values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			stmt.setString(1, s.getNome());
 			stmt.setString(2, s.getCpf());
 			stmt.setString(3, s.getRg());

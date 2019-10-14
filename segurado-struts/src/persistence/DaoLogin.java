@@ -11,10 +11,10 @@ public class DaoLogin extends Dao {
 		try {
 			open();
 
-			stmt = con.prepareStatement("SELECT l from Login l WHERE usuario = :usuario AND senha = :senha");
+			stmt = con.prepareStatement("SELECT  usuario, senha from Login WHERE usuario = '" + login.getUsuario() + "' AND senha = '" + login.getSenha() +"';");
 			
-			stmt.setString(1, login.getUsuario());
-			stmt.setString(2, login.getSenha());
+//			stmt.setString(1, login.getUsuario());
+//			stmt.setString(2, login.getSenha());
 			
 			rs = stmt.executeQuery();
 

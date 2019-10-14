@@ -13,7 +13,7 @@ public class DaoSeguro extends Dao {
 
 			open();
 
-			stmt = con.prepareStatement("insert into seguro values (null, ?, ?)");
+			stmt = con.prepareStatement("insert into seguro values (?, ?)");
 			stmt.setString(1, s.getIdentificacao());
 			stmt.setDouble(2, s.getValor());
 
@@ -22,8 +22,7 @@ public class DaoSeguro extends Dao {
 			close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-
+		} 
 	}
 
 	public void delete(int idseguro) throws Exception {

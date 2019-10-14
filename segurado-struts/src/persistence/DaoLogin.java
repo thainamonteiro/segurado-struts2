@@ -2,15 +2,22 @@ package persistence;
 
 import java.sql.Connection;
 
-public class DaoLogin extends Dao{
+import model.Login;
 
-	public boolean checkLogin(String usuario, String senha) {
+public class DaoLogin extends Dao {
+
+	public boolean checkLogin(Login login) {
 		boolean status = false;
 		try {
+			open();
 
 			stmt = con.prepareStatement("SELECT l from Login l WHERE usuario = :usuario AND senha = :senha");
-			rs = stmt.executeQuery();
 			
+			stmt.setString(1, login.getUsuario());
+			stmt.setString(2, login.getSenha());
+			
+			rs = stmt.executeQuery();
+
 			if (rs.next()) {
 				return true;
 
@@ -23,6 +30,6 @@ public class DaoLogin extends Dao{
 			System.out.println(e.getMessage());
 			return false;
 		}
-	
+
 	}
 }

@@ -2,6 +2,7 @@ package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import model.Login;
 import persistence.DaoLogin;
 
 public class LoginAction extends ActionSupport { 
@@ -11,9 +12,10 @@ public class LoginAction extends ActionSupport {
   
     public String execute() { 
     	
-    	DaoLogin dao_login = new DaoLogin();
+    	DaoLogin dao = new DaoLogin();
+    	Login login = new Login();
     	
-        if ( ) {
+        if (dao.checkLogin(login)) {
             return "success"; 
         } else { 
             addActionError(getText("error.login")); 

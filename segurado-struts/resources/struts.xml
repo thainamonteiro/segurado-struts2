@@ -12,9 +12,18 @@
 	<package name="default" extends="struts-default" namespace="/">
 
 		<action name="login" class="action.LoginAction">
-			<result name="sucess">seguro/menu.jsp</result>
+			<result name="sucess">/menu.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
+
+		<action name="cadastrar_seguro" class="action.SeguroAction">
+			<result name="sucess">/listarseguro.jsp</result>
+		</action>
+
+		<action name="cadastrar_segurado" class="action.SeguradoAction">
+			<result name="sucess">/listarsegurado.jsp</result>
+		</action>
+		
 
 	</package>
 </struts>      

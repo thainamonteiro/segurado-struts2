@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
 <title>Login Segurado</title>
@@ -13,35 +14,31 @@
 			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 				<div class="card card-signin my-5">
 					<div class="card-body">
-						${mensagem}
-						
+
 						<h5 class="card-title text-center">Login</h5>
-						<form action="login.action" method="post">
+						<s:actionerror /> 
+						<s:form action="login.action" method="post">
 							<div class="form-group">
-								<label>Usuario:</label> <input id="usuario" name="usuario"
-									type="text" class="form-control"
-									placeholder="Digite seu usuario:" required>
-							</div>
-							<div class="form-group">
-								<labe>Senha:</label> <input id="senha" name="senha"
-									type="password" class="form-control"
-									placeholder="Digite sua senha:" required>
+								<s:textfield placeholder="Digite seu user" id="usuario"
+									name="usuario" class="form-control" key="label.usuario"
+									size="35px" />
 							</div>
 
-							<div class="g-recaptcha"
-								data-sitekey="6LeUkbkUAAAAAL9iLLiRi7AYfmXj7IPaV82jK8jA"></div><br>
-							<button type="submit" class="btn btn-primary">Entrar</button>
-						</form>
+							<div class="form-group">
+								<s:password placeholder="Digite sua senha" id="senha"
+									name="senha" class="form-control" key="label.senha" size="35px" />
+							</div>
+
+							<div class="form-group">
+								<s:submit class="btn btn-primary" method="execute"
+									key="label.submit" />
+							</div>
+						</s:form>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<!--js-->
-	<script src="https://www.google.com/recaptcha/api.js" adiamento
-		assíncrono>
-		
-	</script>
 </body>
 </html>

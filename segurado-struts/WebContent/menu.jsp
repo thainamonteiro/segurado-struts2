@@ -15,13 +15,12 @@
 				<div class="card card-signin my-5">
 					${msg}
 					<div class="card-body">
-					   <a href="${pageContext.request.contextPath}/Logout"/>Sair do sistema</a>
 						<h5 class="card-title text-center">Menu</h5>
 						<center>
-							<a class="btn btn-primary" href="${pageContext.request.contextPath}/seguro/seguradoControllerServlet?acao=abrirseguro" role="button">Cadastro Segurado</a> 
-							<a class="btn btn-primary" href="${pageContext.request.contextPath}/seguro/seguradoControllerServlet?acao=listarsegurado" role="button">Listar Segurado</a> 
-							<a class="btn btn-primary" href="${pageContext.request.contextPath}/seguro/seguroControllerServlet?acao=cadastrarseguro" role="button">Cadastrar Seguro </a> 
-							<a class="btn btn-primary" href="${pageContext.request.contextPath}/seguro/seguroControllerServlet?acao=listarseguro" role="button">Listar Seguros</a>
+							<a class="btn btn-primary" href="cadastrarsegurado.jsp" role="button">Cadastro Segurado</a> 
+							<a class="btn btn-primary" href="listarsegurado.jsp" role="button">Listar Segurado</a> 
+							<a class="btn btn-primary" href="cadastrarseguro.jsp" role="button">Cadastrar Seguro </a> 
+							<a class="btn btn-primary" href="listarseguro.jsp" role="button">Listar Seguros</a>
 						</center>
 					</div>
 				</div>

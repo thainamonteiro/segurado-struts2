@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Segurado implements Serializable {
 
@@ -16,13 +17,14 @@ public class Segurado implements Serializable {
 	private String data_nas;
 	private String data_cad;
 	private String data_alt;
+	List<Seguro> seguro;
 
 	public Segurado() {
 		super();
 	}
 
-	public Segurado(String nome, String cpf, String rg, String sexo, String correntista, String diasVisita,
-			String data_nas, String data_cad, String data_alt) {
+	public Segurado(String nome, String cpf, String rg, String sexo, String correntista,
+			String diasVisita, String data_nas, String data_cad, String data_alt) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -33,7 +35,9 @@ public class Segurado implements Serializable {
 		this.data_nas = data_nas;
 		this.data_cad = data_cad;
 		this.data_alt = data_alt;
+		this.seguro = seguro;
 	}
+
 
 	@Override
 	public String toString() {

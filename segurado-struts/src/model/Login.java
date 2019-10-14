@@ -13,7 +13,7 @@ public class Login implements Serializable {
 		super();
 	}
 
-	public Login(Integer id, String usuario, String senha) {
+	public Login(String usuario, String senha) {
 		super();
 		this.usuario = usuario;
 		this.senha = senha;

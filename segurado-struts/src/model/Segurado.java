@@ -14,7 +14,7 @@ public class Segurado implements Serializable {
 	private String sexo;
 	private String correntista;
 	private String diasVisita;
-	private String data_nas;
+	private String data_nasc;
 	private String data_cad;
 	private String data_alt;
 	List<Seguro> seguro;
@@ -23,27 +23,27 @@ public class Segurado implements Serializable {
 		super();
 	}
 
-	public Segurado(String nome, String cpf, String rg, String sexo, String correntista,
-			String diasVisita, String data_nas, String data_cad, String data_alt) {
+	public Segurado(int idsegurado, String nome, String cpf, String rg, String sexo, String correntista,
+			String diasVisita, String data_nasc, String data_cad, String data_alt, List<Seguro> seguro) {
 		super();
+		this.idsegurado = idsegurado;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
 		this.sexo = sexo;
 		this.correntista = correntista;
 		this.diasVisita = diasVisita;
-		this.data_nas = data_nas;
+		this.data_nasc = data_nasc;
 		this.data_cad = data_cad;
 		this.data_alt = data_alt;
 		this.seguro = seguro;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Segurado [nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", sexo=" + sexo + ", correntista="
-				+ correntista + ", diasVisita=" + diasVisita + ", data_nas=" + data_nas + ", data_cad="
-				+ data_cad + ", data_alt=" + data_alt + "]";
+		return "Segurado [idsegurado=" + idsegurado + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", sexo="
+				+ sexo + ", correntista=" + correntista + ", diasVisita=" + diasVisita + ", data_nasc=" + data_nasc
+				+ ", data_cad=" + data_cad + ", data_alt=" + data_alt + "]";
 	}
 
 	public String getNome() {
@@ -95,11 +95,11 @@ public class Segurado implements Serializable {
 	}
 
 	public String getData_nas() {
-		return data_nas;
+		return data_nasc;
 	}
 
 	public void setData_nas(String data_nas) {
-		this.data_nas = data_nas;
+		this.data_nasc = data_nas;
 	}
 
 	public String getData_cad() {
@@ -113,7 +113,7 @@ public class Segurado implements Serializable {
 	public String getData_alt() {
 		return data_alt;
 	}
- 
+
 	public void setData_alt(String data_alt) {
 		this.data_alt = data_alt;
 	}

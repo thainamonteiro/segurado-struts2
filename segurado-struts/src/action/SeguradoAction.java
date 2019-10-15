@@ -13,16 +13,26 @@ public class SeguradoAction extends ActionSupport {
 	private String sexo;
 	private String correntista;
 	private String diasVisita;
-	private String data_nas;
+	private String data_nasc;
 	private String data_cad;
 	private String data_alt;
 	
 	@Override
 	public String execute() throws Exception{
-		Segurado segurado = new Segurado();
+		Segurado s = new Segurado();
 		DaoSegurado dao = new DaoSegurado();
 		try {
-			dao.create(segurado);
+			s.setNome(nome);
+			s.setCpf(cpf);
+			s.setRg(rg);
+			s.setSexo(sexo);
+			s.setCorrentista(correntista);
+			s.setDiasVisita(diasVisita);
+			s.setData_nas(data_nasc);
+			s.setData_cad(data_cad);
+			s.setData_alt(data_alt);
+			dao.create(s);
+			
 			return "success";
 		} catch (Exception e) {
 			return "error";
@@ -66,11 +76,11 @@ public class SeguradoAction extends ActionSupport {
 	public void setDiasVisita(String diasVisita) {
 		this.diasVisita = diasVisita;
 	}
-	public String getData_nas() {
-		return data_nas;
+	public String getData_nasc() {
+		return data_nasc;
 	}
-	public void setData_nas(String data_nas) {
-		this.data_nas = data_nas;
+	public void setData_nasc(String data_nasc) {
+		this.data_nasc = data_nasc;
 	}
 	public String getData_cad() {
 		return data_cad;

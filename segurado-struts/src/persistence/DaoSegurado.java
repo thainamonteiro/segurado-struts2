@@ -9,8 +9,8 @@ public class DaoSegurado extends Dao {
 	public void create(Segurado s) throws Exception {
 		try {
 			open();
-			
-			stmt = con.prepareStatement("insert into segurado (nome, rg, cpf, sexo, correntista, dias_visita, data_nasc, data_cad, data_alt)  values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			String sql = "insert into segurado values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			stmt = con.prepareStatement(sql);
 			stmt.setString(1, s.getNome());
 			stmt.setString(2, s.getCpf());
 			stmt.setString(3, s.getRg());
@@ -40,6 +40,7 @@ public class DaoSegurado extends Dao {
 		}
 	}
 	
+	
 	public void update(Segurado s) throws Exception{
 		try {
 			open();
@@ -59,31 +60,62 @@ public class DaoSegurado extends Dao {
 		}
 	}
 	
-	public List<Segurado> listaSegurado(){
+	public List<Segurado> listaSegurado() throws Exception{
 		try {
 			open();
-			List<Segurado> segurados = new ArrayList<Segurado>();
+			
 			stmt = con.prepareStatement("select * from segurado");
 			rs = stmt.executeQuery();
+			List<Segurado> list = new ArrayList<Segurado>();
 			
 			while(rs.next()) {
 				Segurado s = new Segurado();
 				s.setIdSegurado(rs.getInt("idsegurado"));
 				s.setNome(rs.getString("nome"));
-				s.setCpf(rs.getString("nome"));
+				s.setCpf(rs.getString("cpf"));
 				s.setRg(rs.getString("rg"));
 				s.setSexo(rs.getString("sexo"));
 				s.setCorrentista(rs.getString("correntista"));
 				s.setDiasVisita(rs.getString("dias_visita"));
-				s.setData_nas(rs.getString("data_nas"));
+				s.setData_nas(rs.getString("data_nasc"));
 				s.setData_cad(rs.getString("data_cad"));
 				s.setData_alt(rs.getString("data_alt"));
-				segurados.add(s);
+				list.add(s);
 			}
-			return segurados;
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public Segurado buscaId(int id) throws Exception{
+		try {
+			open();
+			stmt = con.prepareStatement("select * from segurado where idsegurado = ?");
+			rs = stmt.executeQuery();
+			Segurado s = null;
+			
+			if(rs.next()) {
+			s = new Segurado();
+			s.setIdSegurado(rs.getInt("idsegurado"));
+			s.setNome(rs.getString("nome"));
+			s.setCpf(rs.getString("cpf"));
+			s.setRg(rs.getString("rg"));
+			s.setSexo(rs.getString("sexo"));
+			s.setCorrentista(rs.getString("correntista"));
+			s.setDiasVisita(rs.getString("dias_visita"));
+			s.setData_nas(rs.getString("data_nas"));
+			s.setData_cad(rs.getString("data_cad"));
+			s.setData_alt(rs.getString("data_alt"));
+			return s;			
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 }
+
+

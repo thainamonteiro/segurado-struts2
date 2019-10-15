@@ -12,7 +12,7 @@ public class testeSeguro {
 		DaoSeguro s = new DaoSeguro();
 		Seguro seguro1 = new Seguro();
 
-		seguro1.setId(1);
+		seguro1.setIdseguro(1);
 		seguro1.setIdentificacao("Nomenovo");
 		seguro1.setValor(325.0);
 		try {

@@ -10,15 +10,13 @@ import model.Seguro;
 public class DaoSeguro extends Dao {
 	public void create(Seguro s) throws Exception {
 		try {
-
 			open();
-
-			stmt = con.prepareStatement("insert into seguro values (?, ?)");
+			String sql = "insert into seguro values (null, ?, ?)";
+			stmt = con.prepareStatement(sql);
 			stmt.setString(1, s.getIdentificacao());
 			stmt.setDouble(2, s.getValor());
-
 			stmt.execute();
-
+			
 			close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -42,28 +40,29 @@ public class DaoSeguro extends Dao {
 			stmt = con.prepareStatement("update seguro set identificacao=?, valor=?" + "where idseguro = ?");
 			stmt.setString(1, s.getIdentificacao());
 			stmt.setDouble(2, s.getValor());
-			stmt.setInt(3, s.getId());
+			stmt.setInt(3, s.getIdseguro());
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public List<Seguro> listaSeguro() {
+	public List<Seguro> listaSeguro() throws Exception{
 		try {
 			open();
-			List<Seguro> seguros = new ArrayList<Seguro>();
+		
 			stmt = con.prepareStatement("select * from seguro");
 			rs = stmt.executeQuery();
+			List<Seguro> list = new ArrayList<Seguro>();
 			
 			while(rs.next()) {
 				Seguro s = new Seguro();
-				s.setId(rs.getInt("idseguro"));
+				s.setIdseguro(rs.getInt("idseguro"));
 				s.setIdentificacao(rs.getString("identificacao"));
 				s.setValor(rs.getDouble("valor"));
-				seguros.add(s);
+				list.add(s);
 			}
-			return seguros;
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

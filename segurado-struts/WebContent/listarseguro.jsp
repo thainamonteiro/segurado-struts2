@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,19 +30,18 @@
 								<td>Valor</td>
 								<td>Ações</td>
 							</tr>
-
-							<c:forEach var="seguro" items="${seguros}">
+							
+							<s:iterator value="list">
 								<tr>
-									<td>${seguro.id}</td>
-									<td>${seguro.identificacao}</td>
-									<td>${seguro.valor}</td>
-   									<td>
-   										<a class="btn btn-warning btn-sm" href="${pageContext.request.contextPath}/seguro/seguroControllerServlet?acao=alterarseguro&id=${seguro.id}">Editar</a>
-  								 		<a class="btn btn-danger btn-sm"  href="${pageContext.request.contextPath}/seguro/seguroControllerServlet?acao=excluirseguro&id=${seguro.id}">Excluir</a>
-  								 	</td>
+									<td><s:property value="idseguro" /></td>
+									<td><s:property value="identificacao" /></td>
+									<td><s:property value="valor" /></td>
+									<td><a class="btn btn-warning btn-sm"
+										href="">Editar</a>
+										<a class="btn btn-danger btn-sm"  href="">Excluir</a></td>		
 								</tr>
-							</c:forEach>
-
+							</s:iterator>
+							
 						</table>
 
 					</div>

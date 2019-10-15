@@ -8,15 +8,21 @@ import persistence.DaoSeguro;
 public class SeguroAction extends ActionSupport{
 	
 	private String identificacao;
-	private String valor;
-
-	private Seguro seguro = new Seguro();
+	private Double valor;
 
 	@Override
 	public String execute() throws Exception {
+		Seguro s = new Seguro();
 		DaoSeguro dao = new DaoSeguro();
-		dao.create(seguro);
-		return "success";	
+		try {
+			s.setIdentificacao(identificacao);
+			s.setValor(valor);
+			dao.create(s);
+			
+			return "success";	
+		} catch (Exception e) {
+			return "error";
+		}
 	}
 
 	public String getIdentificacao() {
@@ -27,20 +33,12 @@ public class SeguroAction extends ActionSupport{
 		this.identificacao = identificacao;
 	}
 
-	public String getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
-	}
-
-	public Seguro getSeguro() {
-		return seguro;
-	}
-
-	public void setSeguro(Seguro seguro) {
-		this.seguro = seguro;
 	}
 	
 	

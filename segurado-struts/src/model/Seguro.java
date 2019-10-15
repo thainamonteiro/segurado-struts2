@@ -15,16 +15,20 @@ public class Seguro implements Serializable {
 	}
 	
 
-	public Seguro(String identificacao, Double valor) {
+	public Seguro(int idseguro, String identificacao, Double valor) {
 		super();
+		this.idseguro = idseguro;
 		this.identificacao = identificacao;
 		this.valor = valor;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Seguro [identificacao=" + identificacao + ", valor=" + valor + "]";
+		return "Seguro [idseguro=" + idseguro + ", identificacao=" + identificacao + ", valor=" + valor + "]";
 	}
+
 
 	public String getIdentificacao() {
 		return identificacao;
@@ -43,13 +47,13 @@ public class Seguro implements Serializable {
 	}
 
 
-	public int getId() {
+	public int getIdseguro() {
 		return idseguro;
 	}
 
 
-	public void setId(int id) {
-		this.idseguro = id;
+	public void setIdseguro(int idseguro) {
+		this.idseguro = idseguro;
 	}
 
 }

@@ -18,12 +18,10 @@
 		
 		<action name="listar_segurado" class="action.ListarSeguradoAction">
 			<result name="success">listarsegurado.jsp</result>
-			<result name="error">menu.jsp</result>
 		</action>
 		
 		<action name="listar_seguro" class="action.ListarSeguroAction">
 			<result name="success">listarseguro.jsp</result>
-			<result name="error">menu.jsp</result>
 		</action>
 
 		<action name="cadastrar_seguro" class="action.SeguroAction">
@@ -32,6 +30,14 @@
 
 		<action name="cadastrar_segurado" class="action.SeguradoAction">
 			<result name="success">listarsegurado.jsp</result>
+		</action>
+		
+		<action name="deletar_segurado" class="action.DeleteSeguradoAction">
+			<result name="success">listarsegurado.jsp</result>
+		</action>
+		
+		<action name="deletar_seguro" class="action.DeleteSeguroAction">
+			<result name="success">listarseguro.jsp</result>
 		</action>
 
 	</package>

@@ -1,1 +1,5 @@
-# segurado-struts2
+# Projeto Segurado 
+
+---
+
+<h3>Utilizando Struts2</h3>

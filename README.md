@@ -1,4 +1,4 @@
-# Projeto Segurado 
+# Projeto Segurado :lock:
 
 ---
 

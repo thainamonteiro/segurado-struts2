@@ -18,9 +18,9 @@
 						<h5 class="card-title text-center">Menu</h5>
 						<center>
 							<a class="btn btn-primary" href="cadastrarsegurado.jsp" role="button">Cadastro Segurado</a> 
-							<a class="btn btn-primary" href="listarsegurado.jsp" role="button">Listar Segurado</a> 
+							<a class="btn btn-primary" href="listar_segurado.action" role="button">Listar Segurado</a> 
 							<a class="btn btn-primary" href="cadastrarseguro.jsp" role="button">Cadastrar Seguro </a> 
-							<a class="btn btn-primary" href="listarseguro.jsp" role="button">Listar Seguros</a>
+							<a class="btn btn-primary" href="listar_seguro.action" role="button">Listar Seguros</a>
 						</center>
 					</div>
 				</div>

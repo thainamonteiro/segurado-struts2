@@ -28,7 +28,7 @@ public class SeguradoAction extends ActionSupport {
 			s.setSexo(sexo);
 			s.setCorrentista(correntista);
 			s.setDiasVisita(diasVisita);
-			s.setData_nas(data_nasc);
+			s.setData_nasc(data_nasc);
 			s.setData_cad(data_cad);
 			s.setData_alt(data_alt);
 			dao.create(s);

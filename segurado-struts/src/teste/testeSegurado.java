@@ -19,7 +19,7 @@ public class testeSegurado {
 		segurado.setCpf("teste");
 		segurado.setData_alt("teste");
 		segurado.setData_cad("teste");
-		segurado.setData_nas("teste");
+		segurado.setData_nasc("teste");
 		segurado.setDiasVisita("teste");
 		segurado.setNome("teste");
 		segurado.setRg("teste");

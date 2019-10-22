@@ -94,12 +94,12 @@ public class Segurado implements Serializable {
 		this.diasVisita = diasVisita;
 	}
 
-	public String getData_nas() {
+	public String getData_nasc() {
 		return data_nasc;
 	}
 
-	public void setData_nas(String data_nas) {
-		this.data_nasc = data_nas;
+	public void setData_nasc(String data_nasc) {
+		this.data_nasc = data_nasc;
 	}
 
 	public String getData_cad() {

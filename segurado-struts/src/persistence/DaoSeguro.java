@@ -16,25 +16,25 @@ public class DaoSeguro extends Dao {
 			stmt.setString(1, s.getIdentificacao());
 			stmt.setDouble(2, s.getValor());
 			stmt.execute();
-			
+
 			close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
 	}
 
 	public void delete(int idseguro) throws Exception {
 		try {
 			open();
 			stmt = con.prepareStatement("delete from seguro where idseguro = ?");
-			stmt.setInt(1 , idseguro);
+			stmt.setInt(1, idseguro);
 			stmt.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void update(Seguro s) throws Exception {				
+	public void update(Seguro s) throws Exception {
 		try {
 			open();
 			stmt = con.prepareStatement("update seguro set identificacao=?, valor=?" + "where idseguro = ?");
@@ -47,15 +47,15 @@ public class DaoSeguro extends Dao {
 		}
 	}
 
-	public List<Seguro> listaSeguro() throws Exception{
+	public List<Seguro> listaSeguro() throws Exception {
 		try {
 			open();
-		
+
 			stmt = con.prepareStatement("select * from seguro");
 			rs = stmt.executeQuery();
 			List<Seguro> list = new ArrayList<Seguro>();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				Seguro s = new Seguro();
 				s.setIdseguro(rs.getInt("idseguro"));
 				s.setIdentificacao(rs.getString("identificacao"));
@@ -63,6 +63,26 @@ public class DaoSeguro extends Dao {
 				list.add(s);
 			}
 			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public Seguro buscaId(int idseguro) throws Exception {
+		try {
+			open();
+			stmt = con.prepareStatement("select * from seguro where idseguro = ?");
+			rs = stmt.executeQuery();
+			Seguro s = null;
+
+			if (rs.next()) {
+				s = new Seguro();
+				s.setIdseguro(rs.getInt("idseguro"));
+				s.setIdentificacao(rs.getString("identificacao"));
+				s.setValor(rs.getDouble("valor"));
+				return s;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,8 +1,10 @@
 package persistence;
 
 import java.sql.Connection;
+import java.util.List;
 
 import model.Login;
+import model.Segurado;
 
 public class DaoLogin extends Dao {
 
@@ -32,4 +34,5 @@ public class DaoLogin extends Dao {
 		}
 
 	}
+
 }

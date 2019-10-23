@@ -2,4 +2,4 @@
 
 ---
 
-<h3>Utilizando Struts2</h3>
+<h5>Utilizando Struts2</h5>
